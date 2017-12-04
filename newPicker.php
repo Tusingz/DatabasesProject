@@ -2,11 +2,13 @@
 
 <head>
 
-  <title> Register - Picker Upper </title>
+  <title> Register - Shopper </title>
 
   <meta charset="utf-8">
 
   <link type="text/css" rel="stylesheet" href="style.css" media = "screen">
+
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 
 </head>
 
@@ -17,22 +19,17 @@
   <h2 class = "site-title"> Food United </h2>
 
   <ul class="navlist">
-    <li class="navitem"><a href="index.php">Home</a></li>
-    <li class="navitem"><a href="about.html">About</a></li>
-    <li class="navitem"><a href="showUsers.php">Users</a></li>
+    <li class="navitem"><a href="home.php">Home</a></li>
+    <li class="navitem"><a href="about.php">About</a></li>
+    <li class="navitem"><a href="login.php">Account</a></li>
+    <li class="navitem"><a href="#">History</a></li>
   </ul>
 
 </header>
 
-<div class = "instruction container">
-
-  <p> This the the Sign Up page. Please do not enter any special characters except for '@' or '.' or '-' for the email. The fields
-   that contain a '*' character are required for you to sign up.</p>
-</div>
-
 <div class = "input-container">
 
-  <form action = "insertShopper.php" method = "post" onsubmit = "return validate()">
+  <form action = "insertPicker.php" method = "post" onsubmit = "return validate()">
     <input type = "text" name = "Username" placeholder = "Username" class = "user">
 
     <input type = "text" name = "Password" placeholder = "Password" class = "user">
@@ -43,11 +40,18 @@
 
     <input type = "text" name = "Phone_number" placeholder = "Phone number" class = "user">
 
+    <input type = "text" name = "Credit_card" placeholder = "Credit Card" class = "user">
+
     <input type = "text" name = "Address" placeholder = "Address" class = "user">
 
     <input type = "submit" value = "Submit" id = "Submit">
   </form>
 
+    <div class = "disclaimer">
+      <a href = "newShopper.php" class = "change-link">Want to be a Shopper? Click here!</a>
+    </div>
+
+    <div class = "push"></div>
 </div>
 
 <footer>

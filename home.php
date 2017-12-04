@@ -12,12 +12,14 @@
 
 		<header>
 
-		 <h2 class = "site-title"> Food United<a class = "site-signin" href="newShopper.php">Sign In</a> </h2>
+		 <h2 class = "site-title"> Food United<a class = "site-signin" href="newShopper.php">Sign In</a>
+		 <a class = "site-signin" href = "login.php">Login</a></h2>
 
 		 <ul class="navlist">
 			 <li class="navitem"><a href="home.php">Home</a></li>
 			 <li class="navitem"><a href="about.php">About</a></li>
 			 <li class="navitem"><a href="login.php">Account</a></li>
+			 <li class="navitem"><a href="#">History</a></li>
 		 </ul>
 
 	 </header>
@@ -25,6 +27,7 @@
 	 <div></div>
 
 		<?php
+			session_start();
 
 		include 'connectvarsEECS.php';
 
@@ -32,6 +35,16 @@
 		if (!$conn) {
 				die('Could not connect: ' . mysql_error());
 		}
+		 /*if (!$_SESSION['user'])
+		 {
+			 echo "<p>IN</p>";
+		 }*/
+		 echo $_SESSION['user'];
+		 if (isset($_SESSION['user']))
+		 {
+			 echo "<script>$('.site-signin').remove()</script>";
+			 echo "<p>IN</p>";
+		 }
 
 			$sql = "SELECT Image FROM Grocery_item";
 			$result = mysqli_query($conn, $sql);
@@ -48,6 +61,8 @@
 		 <div class = "info">Food United is a company driven to serve groceries to YOU. We pride ourselves
 		 on our self driven drivers which take your orders and deliver them to you at light speed.</div>
 
+		 <div class = "push"></div>
+
 		 <footer>
     	<div class="pageFooter">
         <p class="footerText">Created By:</p>
@@ -63,6 +78,6 @@
  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
  crossorigin="anonymous"></script>
 
-	<script type="text/javascript" src="home.js"></script>
+ <script type="text/javascript" src="home.js"></script>
 
 </html>

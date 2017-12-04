@@ -11,12 +11,14 @@
   <body>
 		<header>
 
-		 <h2 class = "site-title">Food United<a class = "site-signin" href="newShopper.php">Sign In</a></h2>
+			<h2 class = "site-title"> Food United<a class = "site-signin" href="newShopper.php">Sign In</a>
+ 		 <a class = "site-signin" href = "login.php">Login</a></h2>
 
 		 <ul class="navlist">
 			 <li class="navitem"><a href="home.php">Home</a></li>
 			 <li class="navitem"><a href="about.php">About</a></li>
 			 <li class="navitem"><a href="login.php">Account</a></li>
+			 <li class="navitem"><a href="#">History</a></li>
 		 </ul>
 
 	 </header>

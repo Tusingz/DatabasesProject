@@ -22,6 +22,7 @@
      <li class="navitem"><a href="home.php">Home</a></li>
      <li class="navitem"><a href="about.php">About</a></li>
      <li class="navitem"><a href="login.php">Account</a></li>
+     <li class="navitem"><a href="#">History</a></li>
    </ul>
 
  </header>
@@ -53,7 +54,7 @@
 
     //Check if username is already taken
 
-    $takenUser = mysqli_query($conn, "select * FROM Shopper WHERE Username = '$username'");
+    $takenUser = mysqli_query($conn, "select * FROM Picker_upper WHERE Username = '$username'");
 
     if (mysqli_num_rows($takenUser) > 0)
     {
@@ -82,14 +83,14 @@
       exit();
     }
 
-    $result = mysqli_query($conn, "SELECT MAX(ShopperID) FROM Shopper LIMIT 1");
+    $result = mysqli_query($conn, "SELECT MAX(EmployeeID) FROM Picker_upper LIMIT 1");
 
     $id = mysqli_fetch_array($result);
 
     $sendID = $id[0];
     $sendID += 1;
 
-    $query = "INSERT INTO Shopper (Username, Password, First_name, Last_name, Phone_number, Credit_card,
+    $query = "INSERT INTO Picker_upper (Username, Password, First_name, Last_name, Phone_number, Credit_card,
     Address, ShopperID) VALUES ('$username', '$password', '$first', '$last', '$phone_number', '$credit_card',
     '$address', '$sendID')";
 
@@ -106,6 +107,8 @@
 
     mysqli_close($conn);
    ?>
+
+   <div class = "push"></div>
 
    <footer>
     <div class="pageFooter">

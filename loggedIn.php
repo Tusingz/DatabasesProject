@@ -17,14 +17,16 @@
   <h2 class = "site-title"> Food United </h2>
 
   <ul class="navlist">
-    <li class="navitem"><a href="index.php">Home</a></li>
+    <li class="navitem"><a href="home.php">Home</a></li>
     <li class="navitem"><a href="about.php">About</a></li>
     <li class="navitem"><a href="login.php">Account</a></li>
+    <li class="navitem"><a href="#">History</a></li>
   </ul>
 
 </header>
 
   <?php
+    session_start();
 
     include 'connectvarsEECS.php';
 
@@ -59,7 +61,13 @@
 
       if (mysqli_num_rows($result) > 0)
       {
-        echo "<p> You have successfully logged in! </p>";
+        setcookie("username", "john");
+        //echo "<p> You have successfully logged in! </p>";
+        if (isset($_COOKIE["username"]))
+        {
+          $username = $_COOKIE["username"];
+          echo "<p>$username</p>";
+        }
       }
       else
       {
@@ -69,6 +77,13 @@
         </script>";
         exit();
       }
+    }
+
+    if (!$_SESSION['user'])
+    {
+      $_SESSION['user'] = "nfsda";
+
+      echo "<h2> ".$_SESSION['user']." </h2> \n";
     }
 
     mysqli_free_result($result);

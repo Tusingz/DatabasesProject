@@ -22,6 +22,7 @@
     <li class="navitem"><a href="home.php">Home</a></li>
     <li class="navitem"><a href="about.php">About</a></li>
     <li class="navitem"><a href="login.php">Account</a></li>
+    <li class="navitem"><a href="#">History</a></li>
   </ul>
 
 </header>
@@ -46,6 +47,11 @@
     <input type = "submit" value = "Submit" id = "Submit">
   </form>
 
+    <div class = "disclaimer">
+      <a href = "newPicker.php" class = "change-link">Want to be a Picker Upper? Click here!</a>
+    </div>
+
+    <div class = "push"></div>
 </div>
 
 <footer>
